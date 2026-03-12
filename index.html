@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Schnitzeljagd</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="app">
+        <!-- Password Screen -->
+        <div id="passwordScreen" class="screen active">
+            <div class="card password-card">
+                <div class="emoji-header">🔐</div>
+                <h1>Willkommen zur Schnitzeljagd!</h1>
+                <p>Gib das Passwort ein, um zu beginnen.</p>
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="Passwort"
+                    class="input-field"
+                >
+                <button id="passwordBtn" class="btn btn-primary">Eintreten</button>
+                <div id="passwordError" class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Intro Screen -->
+        <div id="introScreen" class="screen">
+            <div class="card intro-card">
+                <div class="emoji-header">🗺️</div>
+                <h1>Willkommen zur Schnitzeljagd!</h1>
+                <p>Du wirst 8 Rätsel lösen und dabei verschiedene Orte erkunden. Jede richtige Antwort führt dich zur nächsten Station.</p>
+                <p class="intro-hint">🌿 Nutze dein Wissen über die Natur und Orte ringsum!</p>
+                <button id="startBtn" class="btn btn-primary">🎯 Los geht's!</button>
+            </div>
+        </div>
+
+        <!-- Question Screen -->
+        <div id="questionScreen" class="screen question-screen">
+            <div class="progress-section">
+                <div class="progress-text">
+                    <span id="progressNumber">1</span> von <span id="totalQuestions">8</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="card question-card">
+                <div class="question-header">
+                    <span class="question-icon">🔍</span>
+                    <span class="question-number" id="questionNum">1</span>
+                </div>
+
+                <h2 id="questionText"></h2>
+
+                <div class="answer-section">
+                    <input
+                        type="text"
+                        id="answerInput"
+                        placeholder="Deine Antwort..."
+                        class="input-field"
+                    >
+                    <button id="submitBtn" class="btn btn-primary">✅ Absenden</button>
+                </div>
+
+                <button id="hintBtn" class="btn btn-secondary">💡 Hinweis</button>
+
+                <div id="hintText" class="hint-box hidden"></div>
+                <div id="feedbackMessage" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <!-- Success Screen -->
+        <div id="successScreen" class="screen">
+            <div class="card success-card">
+                <div class="emoji-header">✅</div>
+                <h2 id="successMessage"></h2>
+                <p id="locationHint" class="location-hint"></p>
+                <button id="nextBtn" class="btn btn-primary">➡️ Nächste Frage</button>
+            </div>
+        </div>
+
+        <!-- Completion Screen -->
+        <div id="completionScreen" class="screen">
+            <div class="card completion-card">
+                <div class="emoji-header">🏆</div>
+                <h1>Glückwunsch!</h1>
+                <p>Du hast alle Rätsel gelöst und die Schnitzeljagd erfolgreich abgeschlossen!</p>
+                <div id="confetti"></div>
+                <button id="restartBtn" class="btn btn-primary">🔄 Neu Starten</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
