@@ -30,6 +30,7 @@ const questionNum = document.getElementById('questionNum');
 const progressNumber = document.getElementById('progressNumber');
 const totalQuestions = document.getElementById('totalQuestions');
 const progressFill = document.getElementById('progressFill');
+const currentLocationBadge = document.getElementById('currentLocationBadge');
 const successMessage = document.getElementById('successMessage');
 const locationHint = document.getElementById('locationHint');
 
@@ -176,6 +177,7 @@ function renderQuestion() {
     questionText.textContent = q.question;
     questionNum.textContent = appState.currentQuestion + 1;
     progressNumber.textContent = appState.currentQuestion + 1;
+    currentLocationBadge.textContent = q.currentLocation;
 
     updateProgressBar();
 
