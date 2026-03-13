@@ -31,7 +31,7 @@
             <div class="card intro-card">
                 <div class="emoji-header">🗺️</div>
                 <h1>Willkommen zur Schnitzeljagd!</h1>
-                <p>Du wirst 8 Rätsel lösen und dabei verschiedene Orte erkunden. Jede richtige Antwort führt dich zur nächsten Station.</p>
+                <p>Du wirst 6 Rätsel lösen und dabei verschiedene Orte erkunden. Jede richtige Antwort führt dich zur nächsten Station.</p>
                 <p class="intro-hint">🌿 Nutze dein Wissen über die Natur und Orte ringsum!</p>
                 <button id="startBtn" class="btn btn-primary">🎯 Los geht's!</button>
             </div>
@@ -41,7 +41,7 @@
         <div id="questionScreen" class="screen question-screen">
             <div class="progress-section">
                 <div class="progress-text">
-                    <span id="progressNumber">1</span> von <span id="totalQuestions">8</span>
+                    <span id="progressNumber">1</span> von <span id="totalQuestions">6</span>
                 </div>
                 <div class="progress-bar">
                     <div id="progressFill" class="progress-fill"></div>
@@ -52,6 +52,23 @@
                 <div class="question-header">
                     <span class="question-icon">🔍</span>
                     <span class="question-number" id="questionNum">1</span>
+                </div>
+
+                <!-- Audio Player (nur bei Hörrätsel) -->
+                <div id="audioSection" class="audio-section hidden">
+                    <div class="audio-player">
+                        <button id="audioPlayBtn" class="audio-play-btn" aria-label="Abspielen">▶</button>
+                        <div class="audio-progress-wrap">
+                            <div id="audioProgressBar" class="audio-progress-bar">
+                                <div id="audioProgressFill" class="audio-progress-fill"></div>
+                            </div>
+                            <div class="audio-time-row">
+                                <span id="audioCurrentTime">0:00</span>
+                                <span id="audioDuration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <audio id="audioElement"></audio>
                 </div>
 
                 <h2 id="questionText"></h2>
@@ -88,7 +105,7 @@
             <div class="card completion-card">
                 <div class="emoji-header">🏆</div>
                 <h1>Glückwunsch!</h1>
-                <p>Du hast alle Rätsel gelöst und die Schnitzeljagd erfolgreich abgeschlossen!</p>
+                <p>Du hast alle Rätsel gelöst und die Schnitzeljagd erfolgreich abgeschlossen! Auf dem Balkon wartet eine Überraschung auf dich. 🎁</p>
                 <div id="confetti"></div>
                 <button id="restartBtn" class="btn btn-primary">🔄 Neu Starten</button>
             </div>

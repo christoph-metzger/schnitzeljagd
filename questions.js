@@ -1,52 +1,41 @@
 const QUESTIONS = [
     {
-        question: "Ich habe viele Blätter, aber kein Buch. Ich stehe still und doch bewege ich mich. Was bin ich?",
-        answers: ["baum"],
-        hint: "Denk an eine große Pflanze in der Natur.",
-        location: "📍 Beim großen Baum am Eingang"
+        audio: "raetsel1.mp3",
+        question: "🎵 Hör dir das Hörrätsel an! Welcher Ort ist gemeint?",
+        answers: ["Dachgeschoss", "Zimmer Christoph", "Christophs Zimmer"],
+        hint: "Denk an den Ort des Videos.",
+        location: "📍 Den nächsten Hinweis findest du in Christophs Zimmer"
     },
     {
-        question: "Ich spiegle den Himmel, bewege mich nicht, doch darin kann man schwimmen. Was bin ich?",
-        answers: ["see", "teich"],
-        hint: "Es ist eine Wasserfläche, die ruhig und glatt ist.",
-        location: "📍 Am kleinen Teich"
+        question: "Wie viele 🦆 kannst du dort entdecken?",
+        answers: ["9", "neun"],
+        hint: "Schau genau hin und finde alle Enten! Es sind zwischen 1 und 73 Enten versteckt.",
+        location: "📍 Es geht in der Küche weiter."
     },
     {
-        question: "Ich bin aus Stein, sehr alt und grau. Generationen saßen auf mir schon. Was bin ich?",
-        answers: ["bank", "stein"],
-        hint: "Ein Möbelstück aus Stein, auf dem man sich ausruhen kann.",
-        location: "📍 Bei der alten Steinbank"
+        question: "Finde das nächste Rätsel und löse es um zu erfahren, wo es weiter geht. Lösungswort:",
+        answers: ["Spielplatz", "spielplatz", "SPIELPLATZ"],
+        hint: "Finde jemanden der dir bei dem Rätsel hilft.",
+        location: "📍 Auf dem Spielplatz ist der nächste Hinweis versteckt."
     },
     {
-        question: "Im Sommer summt es um mich herum, meine Kinder machen Honig. Was bin ich?",
-        answers: ["bienenstock", "bienenbeute", "biene"],
-        hint: "Ein Ort, wo viele Insekten leben und Honig produzieren.",
-        location: "📍 Beim Blumenbeet"
+        question: "Suche Rebus. Er gibt dir den Hinweis für den nächsten Ort.",
+        answers: ["Wohnwagen", "wohnwagen", "wohnwaagen"],
+        hint: "Denke etwas um die Ecke und schau genau hin, was auf dem Rebus zu sehen ist.",
+        location: "📍 Es geht weiter zum Wohnwagen."
     },
     {
-        question: "Ich habe Zweige, aber kein Baum. Ich fließe, aber kein Fluss. Was bin ich?",
-        answers: ["weg", "pfad", "weg/pfad"],
-        hint: "Es ist eine Verbindung zwischen zwei Orten, auf der man gehen kann.",
-        location: "📍 An der Weggabelung"
+        question: "Was du dort findest muss in die richtige Reihenfolge gebracht werden. Damit kommst du auf den nächsten Ort. Der nächste Ort ist:",
+        answers: ["garage", "Garage"],
+        hint: "1-24 | ABC",
+        location: "📍 Suche den nächsten Hinweis in der Garage."
     },
     {
-        question: "Kinder klettern, schaukeln, rutschen an mir. Erwachsene schauen zu. Was bin ich?",
-        answers: ["spielplatz", "spielgerät", "rutsche", "schaukel"],
-        hint: "Ein Ort, wo Kinder spielen und sich austoben können.",
-        location: "📍 Am Spielplatz"
-    },
-    {
-        question: "Ich lebe in der Mauer, mein Haus aus Stein gebaut. Kleine Vögel nisten in mir. Was bin ich?",
-        answers: ["vogelhäuschen", "nistkasten", "vogelhaus"],
-        hint: "Ein kleines Häuschen für Vögel zum Nisten.",
-        location: "📍 Am Vogelhäuschen"
-    },
-    {
-        question: "Der Anfang und das Ende sind hier vereint. Wo du gestartet hast, endet nun die Jagd.",
-        answers: ["start", "anfang", "beginn"],
-        hint: "Denk an den Ort, wo du deine Schnitzeljagd begonnen hast.",
-        location: "🏆 Du bist am Ziel! Die Schnitzeljagd ist vorbei!"
+        question: "Wie viele Türme findest du in der Garage?",
+        answers: ["14", "vierzehn", "15", "fünfzehn"],
+        hint: "Ein Turm ist ein vertikal ausgerichtetes, hoch aufragendes Bauwerk mit vergleichsweise kleiner Grundfläche, das frei stehen oder Teil eines größeren Gebäudes (z.B. Kirche, Burg) sein kann.",
+        location: "📍 Du hast es geschafft!"
     }
 ];
 
-const PASSWORD = "Schnitzeljagd2024";
+const PASSWORD = "14Maerz2026";

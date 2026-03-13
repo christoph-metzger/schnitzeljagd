@@ -33,6 +33,14 @@ const progressFill = document.getElementById('progressFill');
 const successMessage = document.getElementById('successMessage');
 const locationHint = document.getElementById('locationHint');
 
+const audioSection = document.getElementById('audioSection');
+const audioElement = document.getElementById('audioElement');
+const audioPlayBtn = document.getElementById('audioPlayBtn');
+const audioProgressBar = document.getElementById('audioProgressBar');
+const audioProgressFill = document.getElementById('audioProgressFill');
+const audioCurrentTime = document.getElementById('audioCurrentTime');
+const audioDuration = document.getElementById('audioDuration');
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     loadState();
@@ -74,6 +82,49 @@ function setupEventListeners() {
     hintBtn.addEventListener('click', handleHintRequest);
     nextBtn.addEventListener('click', handleNextQuestion);
     restartBtn.addEventListener('click', handleRestart);
+
+    // Audio player controls
+    audioPlayBtn.addEventListener('click', toggleAudio);
+
+    audioElement.addEventListener('timeupdate', () => {
+        if (audioElement.duration) {
+            const pct = (audioElement.currentTime / audioElement.duration) * 100;
+            audioProgressFill.style.width = pct + '%';
+            audioCurrentTime.textContent = formatTime(audioElement.currentTime);
+        }
+    });
+
+    audioElement.addEventListener('loadedmetadata', () => {
+        audioDuration.textContent = formatTime(audioElement.duration);
+    });
+
+    audioElement.addEventListener('ended', () => {
+        audioPlayBtn.textContent = '▶';
+        audioProgressFill.style.width = '100%';
+    });
+
+    audioProgressBar.addEventListener('click', (e) => {
+        if (!audioElement.duration) return;
+        const rect = audioProgressBar.getBoundingClientRect();
+        const pct = (e.clientX - rect.left) / rect.width;
+        audioElement.currentTime = pct * audioElement.duration;
+    });
+}
+
+function toggleAudio() {
+    if (audioElement.paused) {
+        audioElement.play();
+        audioPlayBtn.textContent = '⏸';
+    } else {
+        audioElement.pause();
+        audioPlayBtn.textContent = '▶';
+    }
+}
+
+function formatTime(seconds) {
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return m + ':' + String(s).padStart(2, '0');
 }
 
 // Password Handling
@@ -136,6 +187,22 @@ function renderQuestion() {
     hintText.classList.add('hidden');
     hintBtn.textContent = '💡 Hinweis';
     appState.hintShown = false;
+
+    // Audio question handling
+    audioElement.pause();
+    audioPlayBtn.textContent = '▶';
+    audioProgressFill.style.width = '0%';
+    audioCurrentTime.textContent = '0:00';
+    audioDuration.textContent = '0:00';
+
+    if (q.audio) {
+        audioElement.src = q.audio;
+        audioElement.load();
+        audioSection.classList.remove('hidden');
+    } else {
+        audioSection.classList.add('hidden');
+        audioElement.src = '';
+    }
 }
 
 function updateProgressBar() {
@@ -153,7 +220,7 @@ function handleAnswerSubmit() {
     }
 
     const q = QUESTIONS[appState.currentQuestion];
-    const isCorrect = q.answers.some(validAnswer => validAnswer === answer);
+    const isCorrect = q.answers.some(validAnswer => validAnswer.toLowerCase() === answer);
 
     if (isCorrect) {
         appState.answered.push(true);
