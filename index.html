@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌿 Schnitzeljagd</title>
+    <title>🎂 Geburtstags-Schnitzeljagd</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
@@ -12,9 +12,9 @@
         <!-- Password Screen -->
         <div id="passwordScreen" class="screen active">
             <div class="card password-card">
-                <div class="emoji-header">🔐</div>
-                <h1>Willkommen zur Schnitzeljagd!</h1>
-                <p>Gib das Passwort ein, um zu beginnen.</p>
+                <div class="emoji-header">🎂</div>
+                <h1>Willkommen zur Geburtstags-Schnitzeljagd!</h1>
+                <p>Gib das Passwort ein, um die Party zu starten! 🎉</p>
                 <input
                     type="password"
                     id="passwordInput"
@@ -29,11 +29,11 @@
         <!-- Intro Screen -->
         <div id="introScreen" class="screen">
             <div class="card intro-card">
-                <div class="emoji-header">🗺️</div>
-                <h1>Willkommen zur Schnitzeljagd!</h1>
-                <p>Du wirst 6 Rätsel lösen und dabei verschiedene Orte erkunden. Jede richtige Antwort führt dich zur nächsten Station.</p>
-                <p class="intro-hint">🌿 Nutze dein Wissen über die Natur und Orte ringsum!</p>
-                <button id="startBtn" class="btn btn-primary">🎯 Los geht's!</button>
+                <div class="emoji-header">🎈</div>
+                <h1>Alles Gute zum Geburtstag!</h1>
+                <p>Du wirst 6 Rätsel lösen und dabei verschiedene Orte erkunden. Jede richtige Antwort führt dich zur nächsten Station!</p>
+                <p class="intro-hint">🎊 Feier dich durch die Schnitzeljagd und entdecke am Ende deine Überraschung!</p>
+                <button id="startBtn" class="btn btn-primary">🥳 Los geht's!</button>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
 
             <div class="card question-card">
                 <div class="question-header">
-                    <span class="question-icon">🔍</span>
+                    <span class="question-icon">🎯</span>
                     <span class="question-number" id="questionNum">1</span>
                 </div>
 
@@ -93,7 +93,7 @@
         <!-- Success Screen -->
         <div id="successScreen" class="screen">
             <div class="card success-card">
-                <div class="emoji-header">✅</div>
+                <div class="emoji-header">🎊</div>
                 <h2 id="successMessage"></h2>
                 <p id="locationHint" class="location-hint"></p>
                 <button id="nextBtn" class="btn btn-primary">➡️ Nächste Frage</button>
@@ -103,8 +103,8 @@
         <!-- Completion Screen -->
         <div id="completionScreen" class="screen">
             <div class="card completion-card">
-                <div class="emoji-header">🏆</div>
-                <h1>Glückwunsch!</h1>
+                <div class="emoji-header">🥳</div>
+                <h1>Herzlichen Glückwunsch!</h1>
                 <p>Du hast alle Rätsel gelöst und die Schnitzeljagd erfolgreich abgeschlossen! Auf dem Balkon wartet eine Überraschung auf dich. 🎁</p>
                 <div id="confetti"></div>
                 <button id="restartBtn" class="btn btn-primary">🔄 Neu Starten</button>
